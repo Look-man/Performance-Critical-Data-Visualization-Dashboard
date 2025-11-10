@@ -27,31 +27,46 @@ It can render and update **10,000+ data points** smoothly at **60fps** using eff
 
 ## 🧱 Folder Structure
 
-src/
+performance-dashboard/
 ├── app/
-│ ├── page.tsx # Main dashboard page
-│ └── globals.css # Global Tailwind styles
-│
+│   ├── dashboard/
+│   │   ├── page.tsx              # Main dashboard page
+│   │   └── layout.tsx
+│   ├── api/
+│   │   └── data/
+│   │       └── route.ts          # Data API endpoints
+│   ├── globals.css
+│   └── layout.tsx
 ├── components/
-│ ├── charts/
-│ │ ├── LineChart.tsx
-│ │ ├── BarChart.tsx
-│ │ ├── ScatterPlot.tsx
-│ │ └── Heatmap.tsx
-│ │
-│ ├── controls/
-│ │ ├── FilterPanel.tsx
-│ │ └── TimeRangeSelector.tsx
-│ │
-│ ├── ui/
-│ │ ├── DataTable.tsx
-│ │ └── PerformanceMonitor.tsx
-│ │
-│ └── providers/
-│ └── DataProvider.tsx
-│
-└── hooks/
-└── useVirtualization.ts
+│   ├── charts/
+│   │   ├── LineChart.tsx
+│   │   ├── BarChart.tsx
+│   │   ├── ScatterPlot.tsx
+│   │   └── Heatmap.tsx
+│   ├── controls/
+│   │   ├── FilterPanel.tsx
+│   │   └── TimeRangeSelector.tsx
+│   ├── ui/
+│   │   ├── DataTable.tsx
+│   │   └── PerformanceMonitor.tsx
+│   └── providers/
+│       └── DataProvider.tsx
+├── hooks/
+│   ├── useDataStream.ts
+│   ├── useChartRenderer.ts
+│   ├── usePerformanceMonitor.ts
+│   └── useVirtualization.ts
+├── lib/
+│   ├── dataGenerator.ts
+│   ├── performanceUtils.ts
+│   ├── canvasUtils.ts
+│   └── types.ts
+├── public/
+├── package.json
+├── next.config.js
+├── tsconfig.json
+├── README.md
+└── PERFORMANCE.md     
 
 
 ---
