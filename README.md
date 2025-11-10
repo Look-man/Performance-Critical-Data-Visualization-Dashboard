@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ Real-Time Performance Dashboard
 
-## Getting Started
+A high-performance **real-time data visualization dashboard** built with **Next.js 14+, TypeScript, Tailwind CSS**, and **React**.  
+It can render and update **10,000+ data points** smoothly at **60fps** using efficient virtualization and memoization techniques.
 
-First, run the development server:
+---
 
+## 🚀 Features
+
+### 🔹 Core Functionality
+- **Real-time charts** (Line, Bar, Scatter, Heatmap)
+- **Data table** with virtualization for 10,000+ records
+- **Performance monitor** to track FPS and render speed
+- **Filter & time range controls**
+- **Responsive layout** (auto adjusts for all screen sizes)
+
+### 🔹 Tech Highlights
+- Built with **Next.js 14 App Router**
+- Fully typed with **TypeScript**
+- Styled using **Tailwind CSS**
+- Optimized with:
+  - `React.memo` & `useMemo` to minimize re-renders
+  - `requestAnimationFrame` for smooth updates
+  - `React virtualization` for table rendering
+
+---
+
+## 🧱 Folder Structure
+
+src/
+├── app/
+│ ├── page.tsx # Main dashboard page
+│ └── globals.css # Global Tailwind styles
+│
+├── components/
+│ ├── charts/
+│ │ ├── LineChart.tsx
+│ │ ├── BarChart.tsx
+│ │ ├── ScatterPlot.tsx
+│ │ └── Heatmap.tsx
+│ │
+│ ├── controls/
+│ │ ├── FilterPanel.tsx
+│ │ └── TimeRangeSelector.tsx
+│ │
+│ ├── ui/
+│ │ ├── DataTable.tsx
+│ │ └── PerformanceMonitor.tsx
+│ │
+│ └── providers/
+│ └── DataProvider.tsx
+│
+└── hooks/
+└── useVirtualization.ts
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
 ```bash
+git clone https://github.com/<your-username>/realtime-dashboard.git
+cd realtime-dashboard
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Then open http://localhost:3000
+ in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+💡 Customization
+Area	File	Description
+Chart styles	src/components/charts/*	Adjust chart type, colors, or animation
+Table settings	DataTable.tsx	Change row height or data density
+Real-time simulation	DataProvider.tsx	Modify data update interval (default: 100ms)
+Theme	globals.css or Tailwind config	Update background, color palette, or font
+📊 Dashboard Layout
 
-## Learn More
+The dashboard displays 4 charts and a data table, organized as:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Row	Items
+1	Line Chart • Bar Chart • Scatter Plot
+2	Heatmap • Data Table (full width)
